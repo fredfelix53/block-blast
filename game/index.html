@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a1a">
+  <title>Block Blast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HUD Bar -->
+  <div id="hud-bar">
+    <div class="hud-left">
+      <span class="hud-title">🧊 BLOCK BLAST</span>
+    </div>
+    <div class="hud-right">
+      <span class="hud-item" data-action="shop" onclick="if(window.ShopUI)ShopUI.showTab('upgrades')"><span class="lvl-icon">⚡ Lv.<span id="hud-level">1</span></span></span>
+      <span class="hud-item"><span class="coin-icon">🪙</span><span id="hud-coins">100</span></span>
+      <span class="hud-item"><span class="gem-icon">💎</span><span id="hud-gems">0</span></span>
+    </div>
+  </div>
+
+  <!-- Game Container -->
+  <div id="game-container">
+    <!-- Score -->
+    <div id="score-display">
+      <div class="score-label">Score</div>
+      <div class="score-value" id="score-value">0</div>
+    </div>
+
+    <!-- Game Board Canvas -->
+    <canvas id="game-board"></canvas>
+
+    <!-- Block Tray (3 random shapes) -->
+    <div id="block-tray"></div>
+
+    <!-- Buttons -->
+    <div id="button-bar">
+      <button class="game-btn btn-primary" id="restart-btn">▶ New Game</button>
+      <button class="game-btn btn-shop" id="button-shop">🛒 Shop</button>
+      <button class="game-btn btn-powerup" id="button-ach">🏆</button>
+    </div>
+  </div>
+
+  <!-- Game Over Overlay -->
+  <div id="game-over-overlay">
+    <div class="game-over-box">
+      <h2>Game Over</h2>
+      <div class="final-score" id="final-score">0</div>
+      <div class="stat-row">
+        <span>Rows: <strong id="go-rows">0</strong></span>
+        <span>Best: <strong id="go-combo">0</strong></span>
+      </div>
+      <div class="btn-group">
+        <button class="game-btn btn-primary" onclick="startGame()">▶ Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification"></div>
+
+  <script src="visuals.js"></script>
+  <script src="progression.js"></script>
+  <script src="shop.js"></script>
+  <script src="ads-manager.js"></script>
+  <script src="challenges-system.js"></script>
+  <script src="store-rotator.js"></script>
+  <script src="retention-system.js"></script>
+  <script src="collectibles-system.js"></script>
+  <script src="tutorial-system.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
